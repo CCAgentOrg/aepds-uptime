@@ -1,0 +1,299 @@
+storage:
+  type: sqlite
+  path: /data/gatus.db
+ui:
+  title: AePDS Health Dashboard
+  description: Uptime monitor for Indian state AePDS and PDS portals
+  link: https://aepds-uptime.fly.dev
+connectivity:
+  checker:
+    target: 8.8.8.8
+    interval: 5m
+endpoints:
+- name: Andhra Pradesh AePDS
+  url: https://aepos.ap.gov.in/ePos/CompleteAbstract.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Andaman and Nicobar ePOS
+  url: http://epos.nic.in/an
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Arunachal Pradesh ePOS
+  url: http://epos.nic.in/ap/index.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Assam ePOS
+  url: http://epos.assam.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Bihar ePOS
+  url: http://epos.bihar.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Chandigarh ePOS
+  url: http://epos.nic.in/chd/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: DNH and DD ePOS
+  url: http://epos.ddd.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Delhi ePOS
+  url: https://epos.delhi.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Goa ePOS
+  url: https://epos.haryanafood.gov.in/goa/AbstractTransReport.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Haryana ePOS
+  url: https://epos.haryanafood.gov.in/CompleteAbstract.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Jammu and Kashmir ePOS
+  url: http://epos.jk.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Kerala ePOS
+  url: https://epos.kerala.gov.in/AbstractTransReport.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Ladakh ePOS
+  url: http://epos.nic.in/ladakh/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Lakshadweep ePOS
+  url: http://epos.nic.in/ld/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Madhya Pradesh ePOS
+  url: http://www.epos.mp.gov.in/CompleteAbstract.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Maharashtra ePOS
+  url: https://mahaepos.gov.in/CompleteAbstract.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Manipur ePOS
+  url: http://epos.nic.in/manipur/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Meghalaya ePOS
+  url: http://epos.nic.in/meghalaya/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Mizoram ePOS
+  url: http://epos.mizoram.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Nagaland ePOS
+  url: http://epos.nic.in/naga/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Punjab ePOS
+  url: http://epos.punjab.gov.in/CompleteAbstract.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Sikkim ePOS
+  url: http://epos.haryanafood.gov.in/SK/CompleteAbstract.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Tripura ePOS
+  url: https://epostr.gov.in/CompleteAbstract.jsp
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Andaman DCSCA
+  url: http://dcsca.andaman.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Chhattisgarh PDS
+  url: http://khadya.cg.nic.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Gujarat i-PDS
+  url: http://ipds.gujarat.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Himachal Pradesh ePDS
+  url: https://epds.co.in/RptPOSDistrictWise_Mysql.aspx
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Jharkhand Aahar
+  url: http://aahar.jharkhand.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Karnataka Ahara
+  url: http://ahara.kar.nic.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Lakshadweep Dhaanyapurti
+  url: https://164.100.59.14/FpsSales/state-LD
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Odisha Food
+  url: http://www.foododisha.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Puducherry DCSCA
+  url: http://dcsca.puducherry.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Rajasthan Food
+  url: http://food.raj.nic.in/DistrictWise_Distribution_report.aspx
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Tamil Nadu PDS
+  url: http://tnpds.gov.in/pages/reports/pds-report-state.xhtml
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Telangana ePOS
+  url: http://epos.telangana.gov.in/ePoS/FpsIssues_Report2.html
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Uttar Pradesh FCS
+  url: http://fcs.up.gov.in/Important/POS-en.aspx
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Uttarakhand Dhaanyapurti
+  url: https://uk.dhaanyapurti.nic.in
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: West Bengal PDS
+  url: https://wbpds.gov.in/
+  interval: 5m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: Annavitran Portal
+  url: http://annavitran.nic.in/
+  interval: 10m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: NFSA Portal
+  url: https://nfsa.gov.in/portal/PDS_page
+  interval: 10m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
+- name: ePDS NIC Landing
+  url: http://epds.nic.in/fpsauto.html
+  interval: 10m
+  conditions:
+  - '[STATUS] == 200'
+  alerts:
+  - type: email
