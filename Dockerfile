@@ -1,11 +1,9 @@
-FROM twinproduction/gatus:latest AS gatus
-FROM alpine:3.19 AS prep
-COPY config.yaml /config.yaml
-FROM scratch
-COPY --from=gatus /gatus /
-COPY --from=gatus /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=prep /config.yaml /config/config.yaml
+FROM alpine:3.19
+RUN apk add --no-cache ca-certificates wget
+ARG GATUS_VERSION=v5.24.1
+RUN wget -qO /tmp/gatus.tar.gz "https://github.com/TwiN/gatus/releases/download/${GATUS_VERSION}/gatus_${GATUS_VERSION}_linux_amd64.tar.gz" && tar -xzf /tmp/gatus.tar.gz -C /usr/local/bin/ gatus && rm /tmp/gatus.tar.gz
+COPY config.yaml /config/config.yaml
 ENV GATUS_CONFIG_PATH=/config/config.yaml
 ENV PORT=8080
 EXPOSE 8080
-ENTRYPOINT ["/gatus"]
+CMD ["gatus"]
